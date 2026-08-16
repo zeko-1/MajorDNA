@@ -1,0 +1,10 @@
+.logo-placeholder{background:transparent!important;color:transparent;overflow:visible}
+.logo-placeholder img{width:40px;height:40px;object-fit:contain;display:block}
+button{transition:transform .2s ease,box-shadow .2s ease,filter .2s ease}
+button:not(:disabled):hover{transform:translateY(-3px) scale(1.02);filter:brightness(1.03);box-shadow:0 12px 25px #3c2b2028}
+.hero-actions{align-items:flex-start;flex-direction:column;gap:11px}
+.hero-actions .pill-primary{min-width:260px;justify-content:flex-start;margin:0}
+.career-button{color:var(--espresso);font-weight:700}
+.hero-visual .tag-one{left:38%;top:145px;min-width:145px;white-space:nowrap;z-index:4}
+@media(max-width:1050px){.hero-visual .tag-one{left:8%;top:70px}}
+@media(max-width:620px){.hero-visual .tag-one{left:18px;top:24px;min-width:130px}}

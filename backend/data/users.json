@@ -1,0 +1,13 @@
+[ {
+  "username" : "admin",
+  "passwordHash" : "3eb3fe66b31e3b4d10fa70b5cad49c7112294af6ae4e476a1c405155d45aa121",
+  "fullName" : "MajorDNA Administrator",
+  "role" : "ADMIN",
+  "mustChangePassword" : false
+}, {
+  "username" : "Zek",
+  "passwordHash" : "f66146fec066f0486e5eb825ad10c25341c7bd0241a8d20c59a729ed875aa566",
+  "fullName" : "Zakia",
+  "role" : "STUDENT",
+  "mustChangePassword" : false
+} ]

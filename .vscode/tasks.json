@@ -1,0 +1,8 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {"label":"Backend","type":"shell","command":"mvn spring-boot:run","options":{"cwd":"${workspaceFolder}/backend"},"isBackground":true,"problemMatcher":[]},
+    {"label":"Frontend","type":"shell","command":"npm run dev -- --host 127.0.0.1 --port 5188 --strictPort","options":{"cwd":"${workspaceFolder}/frontend"},"isBackground":true,"problemMatcher":[]},
+    {"label":"JavaFX","type":"shell","command":"mvn javafx:run","options":{"cwd":"${workspaceFolder}/javafx-module"},"problemMatcher":[]}
+  ]
+}
