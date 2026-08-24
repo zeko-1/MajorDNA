@@ -38,4 +38,84 @@
   "mode" : "SUB_TRACK",
   "startedAt" : "2026-08-15T14:33:31.681097Z",
   "completed" : true
+}, {
+  "sessionId" : "690f5f83-223d-4da4-889a-b7d5a1eaf20f",
+  "mode" : "SUB_TRACK",
+  "startedAt" : "2026-08-16T10:26:16.551165200Z",
+  "completed" : false
+}, {
+  "sessionId" : "e3be731a-4a93-4497-a523-922792d51fec",
+  "mode" : "CAREER_EXPLORER",
+  "startedAt" : "2026-08-16T10:26:24.732042600Z",
+  "completed" : false
+}, {
+  "sessionId" : "45e606c4-ff9a-4993-8e9d-178c6a645c08",
+  "mode" : "CITYU_STUDENT",
+  "startedAt" : "2026-08-16T10:26:31.045541200Z",
+  "completed" : false
+}, {
+  "sessionId" : "9e4ab6c6-953c-45a3-98a0-e9d39d7e7418",
+  "mode" : "CAREER_EXPLORER",
+  "startedAt" : "2026-08-16T10:26:42.754614500Z",
+  "completed" : true
+}, {
+  "sessionId" : "57a66a3c-1573-458b-88ff-c8617c7003fd",
+  "mode" : "CAREER_EXPLORER",
+  "startedAt" : "2026-08-16T10:58:26.826338400Z",
+  "completed" : true
+}, {
+  "sessionId" : "7169ee04-03cb-4c39-9f86-5c354902befa",
+  "mode" : "CAREER_EXPLORER",
+  "startedAt" : "2026-08-18T04:09:03.117785900Z",
+  "completed" : true
+}, {
+  "sessionId" : "c7dfc6fa-31d3-4696-8855-a87bf8af0916",
+  "mode" : "CITYU_STUDENT",
+  "startedAt" : "2026-08-18T07:27:20.509470800Z",
+  "completed" : false
+}, {
+  "sessionId" : "f4ad51b2-a3a9-48ff-8369-927f2ba31d22",
+  "mode" : "CAREER_EXPLORER",
+  "startedAt" : "2026-08-18T07:27:45.849061500Z",
+  "completed" : false
+}, {
+  "sessionId" : "3d52b971-d7db-4deb-9abf-2f4f38d8947c",
+  "mode" : "SUB_TRACK",
+  "startedAt" : "2026-08-18T07:27:56.621703400Z",
+  "completed" : false
+}, {
+  "sessionId" : "e263a3b8-6112-453a-84f3-d161fed90ffe",
+  "mode" : "SUB_TRACK",
+  "startedAt" : "2026-08-18T07:28:08.559509100Z",
+  "completed" : true
+}, {
+  "sessionId" : "41d47e39-5cb5-417f-a6b2-1dcf4b82711b",
+  "mode" : "CAREER_EXPLORER",
+  "startedAt" : "2026-08-20T14:31:32.008434600Z",
+  "completed" : false
+}, {
+  "sessionId" : "8f5750a5-f7d7-462e-bf40-3d7c1702737f",
+  "mode" : "CAREER_EXPLORER",
+  "startedAt" : "2026-08-20T14:31:55.598379200Z",
+  "completed" : true
+}, {
+  "sessionId" : "a01c8dac-2594-4f65-9054-b27526041463",
+  "mode" : "SUB_TRACK",
+  "startedAt" : "2026-08-21T00:02:30.681103500Z",
+  "completed" : false
+}, {
+  "sessionId" : "45c32779-8d61-42e5-bfec-48fb7bd32bb9",
+  "mode" : "CITYU_STUDENT",
+  "startedAt" : "2026-08-21T00:32:44.417850300Z",
+  "completed" : false
+}, {
+  "sessionId" : "e0df2d49-6b9b-4d8a-828c-31ba9501d614",
+  "mode" : "CITYU_STUDENT",
+  "startedAt" : "2026-08-21T01:18:56.296268Z",
+  "completed" : true
+}, {
+  "sessionId" : "9c1a3ed1-20b1-4eb5-b87a-2229c0fa05cd",
+  "mode" : "CITYU_STUDENT",
+  "startedAt" : "2026-08-21T01:38:36.465292900Z",
+  "completed" : false
 } ]

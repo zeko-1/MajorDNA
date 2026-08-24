@@ -10,4 +10,10 @@
   "fullName" : "Zakia",
   "role" : "STUDENT",
   "mustChangePassword" : false
+}, {
+  "username" : "Hiba",
+  "passwordHash" : "f66146fec066f0486e5eb825ad10c25341c7bd0241a8d20c59a729ed875aa566",
+  "fullName" : "Hiba",
+  "role" : "STUDENT",
+  "mustChangePassword" : false
 } ]
