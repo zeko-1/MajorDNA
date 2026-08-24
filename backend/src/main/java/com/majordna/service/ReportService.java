@@ -1,3 +1,4 @@
+// Orchestrates one complete assessment from validated answers to a saved report.
 package com.majordna.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -30,6 +31,7 @@ public class ReportService {
         if(req.educationLevel()==null||req.educationLevel().isBlank())throw new IllegalArgumentException("Education level is required.");
         User user = "CITYU_STUDENT".equalsIgnoreCase(req.mode()) ? new CityUStudent(req.name(),req.age(),req.studentId()) : new CareerExplorer(req.name(),req.age(),req.educationLevel());
         UserProfile profile=new UserProfile(req.name().trim(),req.age(),req.educationLevel(),req.currentMajor(),req.country(),req.gender(),req.studentId());
+        // Keep scoring deterministic; the AI service is called only after these values exist.
         AssessmentScores scores = assessment.scoreDetailed(req.answers(),req.mode());
         Map<String,Integer> dna = scores.dimensions();
         List<CareerMatch> allCareerMatches=careerLibrary.top(dna,careerLibrary.all().size());
@@ -54,6 +56,7 @@ public class ReportService {
         List<CareerMatch> topCareers=allCareerMatches.stream().limit(5).toList();
         List<CareerMatch> careful=careerLibrary.exploreCarefully(dna,3);
         Report report = new Report(UUID.randomUUID().toString(),Instant.now().toString(),user.getName(),req.mode(),dna,strengths,recs,programs,gaps,roadmap,ai.explain(user.getName(),dna,recs),scores.categories(),scores.bigFive(),scores.intelligence(),scores.workStyle(),topCareers,careful,majors,profile);
+        // New reports appear first so the dashboard and JavaFX viewer load the latest result.
         reports.add(0,report); save(); analytics.complete(req.sessionId()); return report;
     }
     private int match(List<Recommendation> recs,String id,String name){return recs.stream().filter(r->r.majorId().equals(id)||r.name().equalsIgnoreCase(name)).map(Recommendation::match).findFirst().orElse(50);}
@@ -62,3 +65,6 @@ public class ReportService {
     private void load(){try{if(Files.exists(file))reports.addAll(mapper.readValue(file.toFile(),new TypeReference<List<Report>>(){}));}catch(IOException ignored){}}
     private void save(){try{Files.createDirectories(file.getParent());mapper.writeValue(file.toFile(),reports);}catch(IOException e){throw new IllegalStateException("Could not save reports",e);}}
 }
+
+
+

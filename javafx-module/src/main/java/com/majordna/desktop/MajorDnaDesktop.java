@@ -1,3 +1,4 @@
+// JavaFX companion dashboard that reads the latest report saved by the Spring Boot backend.
 package com.majordna.desktop;
 import com.fasterxml.jackson.databind.*;
 import javafx.application.Application;
@@ -35,3 +36,4 @@ class RadarChart extends Pane{
  private void draw(){getChildren().clear();Canvas canvas=new Canvas(Math.max(600,getWidth()),Math.max(500,getHeight()));GraphicsContext g=canvas.getGraphicsContext2D();double cx=canvas.getWidth()/2,cy=canvas.getHeight()/2,r=Math.min(cx,cy)*.68;List<String>labels=new ArrayList<>(data.keySet());if(labels.isEmpty())return;g.setStroke(Color.web("#9b7660"));for(int ring=1;ring<=4;ring++){double rr=r*ring/4;polygon(g,cx,cy,rr,labels.size(),false,null);}double[]values=labels.stream().mapToDouble(k->data.get(k)/100.0).toArray();g.setFill(Color.web("#6f5546",.42));g.setStroke(Color.web("#2c211b"));polygon(g,cx,cy,r,labels.size(),true,values);g.setFill(Color.web("#2c211b"));for(int i=0;i<labels.size();i++){double a=-Math.PI/2+2*Math.PI*i/labels.size();g.fillText(labels.get(i)+" "+data.get(labels.get(i)),cx+Math.cos(a)*(r+45)-35,cy+Math.sin(a)*(r+35));}getChildren().add(canvas);}
  private void polygon(GraphicsContext g,double cx,double cy,double r,int n,boolean fill,double[]values){g.beginPath();for(int i=0;i<n;i++){double rr=values==null?r:r*values[i],a=-Math.PI/2+2*Math.PI*i/n,x=cx+Math.cos(a)*rr,y=cy+Math.sin(a)*rr;if(i==0)g.moveTo(x,y);else g.lineTo(x,y);}g.closePath();if(fill)g.fill();g.stroke();}
 }
+

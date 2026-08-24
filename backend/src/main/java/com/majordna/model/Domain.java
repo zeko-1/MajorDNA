@@ -1,3 +1,4 @@
+// Small immutable records keep the data passed between controllers and services easy to follow.
 package com.majordna.model;
 
 import java.util.List;
@@ -49,3 +50,4 @@ public final class Domain {
                                int completionRate, Map<String,Integer> completedByMode) {}
     public record AssessmentStart(String sessionId, String mode, String startedAt, boolean completed) {}
 }
+

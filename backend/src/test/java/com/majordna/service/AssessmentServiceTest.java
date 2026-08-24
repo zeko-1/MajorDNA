@@ -1,3 +1,4 @@
+// These tests cover the scoring rules and the OOP behaviours required by the project brief.
 package com.majordna.service;
 import com.majordna.model.CareerExplorer;
 import com.majordna.model.CityUStudent;
@@ -13,3 +14,4 @@ class AssessmentServiceTest {
  @Test void runtimePolymorphismUsesOverriddenMethod(){User user=new CareerExplorer("Explorer",20,"Diploma");assertEquals("CAREER_EXPLORER",user.getUserType());}
  @Test void settersValidateInvalidState(){var user=new CareerExplorer("Explorer",20,"Diploma");assertThrows(IllegalArgumentException.class,()->user.setAge(5));assertThrows(IllegalArgumentException.class,()->user.setName(" "));}
 }
+

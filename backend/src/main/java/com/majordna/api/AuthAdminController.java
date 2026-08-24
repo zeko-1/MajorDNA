@@ -1,3 +1,4 @@
+// Keeps login and administrator actions in one protected REST controller.
 package com.majordna.api;
 import com.majordna.model.Domain.*;
 import com.majordna.service.*;
@@ -20,3 +21,4 @@ public class AuthAdminController {
  @GetMapping("/admin/careers") public List<Career> careers(@RequestHeader("X-Auth-Token")String token){auth.require(token,"ADMIN");return careers.all();}
  @PutMapping("/admin/careers") public Map<String,Object> saveCareers(@RequestHeader("X-Auth-Token")String token,@RequestBody List<Career>items){auth.require(token,"ADMIN");careers.replaceAll(items);return Map.of("saved",items.size());}
 }
+

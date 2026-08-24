@@ -1,3 +1,4 @@
+// Explains an already calculated report; it never replaces the deterministic scoring logic.
 package com.majordna.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -55,3 +56,4 @@ public class LocalAIAnalysisService implements AIAnalysisService {
     private List<String> suggestions(){return List.of("Why is my top match suitable?","What skill should I improve first?","What should I explore carefully?");}
     private String readEnvFile(String key){Path p=Path.of(".env");if(!Files.exists(p))return "";try{return Files.readAllLines(p).stream().map(String::trim).filter(x->!x.startsWith("#")&&x.startsWith(key+"=")).map(x->x.substring(key.length()+1).trim()).map(x->x.replaceAll("^[\"']|[\"']$","")).findFirst().orElse("");}catch(Exception e){return "";}}
 }
+

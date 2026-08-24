@@ -1,3 +1,4 @@
+/* Image, logo, and visual asset styling. */
 .logo-placeholder{background:transparent!important;color:transparent;overflow:visible}
 .logo-placeholder img{width:40px;height:40px;object-fit:contain;display:block}
 button{transition:transform .2s ease,box-shadow .2s ease,filter .2s ease}
@@ -8,3 +9,4 @@ button:not(:disabled):hover{transform:translateY(-3px) scale(1.02);filter:bright
 .hero-visual .tag-one{left:38%;top:145px;min-width:145px;white-space:nowrap;z-index:4}
 @media(max-width:1050px){.hero-visual .tag-one{left:8%;top:70px}}
 @media(max-width:620px){.hero-visual .tag-one{left:18px;top:24px;min-width:130px}}
+

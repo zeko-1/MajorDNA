@@ -1,3 +1,4 @@
+// Stores start and completion events used by the administrator dashboard.
 package com.majordna.service;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -17,3 +18,4 @@ public class AssessmentAnalyticsService {
  public synchronized AdminMetrics metrics(){int started=sessions.size(),completed=(int)sessions.stream().filter(AssessmentStart::completed).count();Map<String,Integer>byMode=new LinkedHashMap<>();sessions.stream().filter(AssessmentStart::completed).forEach(s->byMode.merge(s.mode(),1,Integer::sum));return new AdminMetrics(started,completed,started-completed,started==0?0:(int)Math.round(completed*100.0/started),byMode);}
  private void save(){try{Files.createDirectories(file.getParent());mapper.writeValue(file.toFile(),sessions);}catch(IOException e){throw new IllegalStateException("Could not save assessment analytics.",e);}}
 }
+

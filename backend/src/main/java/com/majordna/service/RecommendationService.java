@@ -1,3 +1,4 @@
+// Defines the recommendation contract and the major data used by the matching screen.
 package com.majordna.service;
 
 import com.majordna.model.Domain.*;
@@ -43,3 +44,4 @@ class WeightedRecommendationService implements RecommendationService {
       }).sorted(Comparator.comparingInt(Recommendation::match).reversed()).limit(3).toList();
     }
 }
+

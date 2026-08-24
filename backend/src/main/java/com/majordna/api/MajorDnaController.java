@@ -1,3 +1,4 @@
+// Public MajorDNA endpoints: questions, assessments, reports, matching, simulation, and advisor.
 package com.majordna.api;
 
 import com.majordna.model.Domain.*;
@@ -26,3 +27,4 @@ public class MajorDnaController {
       return new Simulation("A future in "+m.name(),"You could grow from foundational projects into roles such as "+String.join(" or ",m.careers())+".",List.of("Solve real user problems","Collaborate in multidisciplinary teams","Build a visible portfolio"),List.of("Keeping skills current","Balancing theory with practice"),List.of("Take one introductory course","Build a two-week mini project","Speak to a professional"));
     }
 }
+

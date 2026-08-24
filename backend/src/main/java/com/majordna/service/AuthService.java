@@ -1,3 +1,4 @@
+// Local authentication keeps the course project self-contained while protecting admin actions.
 package com.majordna.service;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -29,3 +30,4 @@ public class AuthService {
  private String safe(String v){return v==null?"":v;}
  private String hash(String value){try{byte[]bytes=MessageDigest.getInstance("SHA-256").digest(safe(value).getBytes(StandardCharsets.UTF_8));return HexFormat.of().formatHex(bytes);}catch(Exception e){throw new IllegalStateException(e);}}
 }
+

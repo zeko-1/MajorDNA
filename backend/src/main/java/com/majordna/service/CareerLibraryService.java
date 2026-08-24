@@ -1,3 +1,4 @@
+// Matches the scored profile to the editable career library using transparent weights.
 package com.majordna.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -27,7 +28,9 @@ public class CareerLibraryService {
         return grouped.entrySet().stream().map(e->{List<CareerMatch> top=e.getValue().stream().sorted(Comparator.comparingInt(CareerMatch::compatibility).reversed()).limit(3).toList();int score=(int)Math.round(top.stream().mapToInt(CareerMatch::compatibility).average().orElse(0));return new MajorRanking(e.getKey(),score,top.stream().map(x->x.career().name()).toList());}).sorted(Comparator.comparingInt(MajorRanking::compatibility).reversed()).limit(5).toList();
     }
     private List<CareerMatch> rank(Map<String,Integer> rawProfile){
+        // Aliases let career records use readable terms such as Data or Social.
         Map<String,Integer> profile=withAliases(rawProfile);List<CareerMatch> result=new ArrayList<>();
+        // Every career is scored, then the final list is sorted from strongest to weakest.
         for(Career career:careers){Map<String,List<Integer>> matchesByCategory=new LinkedHashMap<>();List<Map.Entry<String,Integer>> dimensions=new ArrayList<>(career.targets().entrySet());
             for(var target:dimensions){int match=Math.max(0,100-Math.abs(profile.getOrDefault(target.getKey(),50)-target.getValue()));matchesByCategory.computeIfAbsent(categoryOf(target.getKey()),k->new ArrayList<>()).add(match);}
             Map<String,Integer> categoryMatches=new LinkedHashMap<>();double finalScore=0;for(var weight:CATEGORY_WEIGHTS.entrySet()){List<Integer> values=matchesByCategory.getOrDefault(weight.getKey(),List.of());int category=values.isEmpty()?50:(int)Math.round(values.stream().mapToInt(Integer::intValue).average().orElse(50));categoryMatches.put(weight.getKey(),category);finalScore+=category*weight.getValue();}
@@ -39,3 +42,6 @@ public class CareerLibraryService {
     private int avg(Map<String,Integer> p,String...keys){return (int)Math.round(Arrays.stream(keys).mapToInt(k->p.getOrDefault(k,50)).average().orElse(50));}
     private void validate(List<Career>items){if(items.size()<25)throw new IllegalArgumentException("Career library must keep at least 25 reviewed careers.");if(items.stream().anyMatch(c->c.id()==null||c.id().isBlank()||c.name()==null||c.name().isBlank()||c.targets()==null||c.targets().isEmpty()||c.salaryMinMyrAnnual()<0||c.salaryMaxMyrAnnual()<c.salaryMinMyrAnnual()))throw new IllegalArgumentException("Each career requires valid identity, targets, and salary range.");if(items.stream().map(Career::id).distinct().count()!=items.size())throw new IllegalArgumentException("Career IDs must be unique.");}
 }
+
+
+

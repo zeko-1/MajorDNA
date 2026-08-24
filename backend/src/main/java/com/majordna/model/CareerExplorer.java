@@ -1,3 +1,4 @@
+// A general explorer keeps the profile flexible for users who are not CityU students yet.
 package com.majordna.model;
 
 public final class CareerExplorer extends User {
@@ -9,3 +10,4 @@ public final class CareerExplorer extends User {
     }
     @Override public String getUserType() { return "CAREER_EXPLORER"; }
 }
+

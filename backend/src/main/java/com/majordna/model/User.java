@@ -1,3 +1,4 @@
+// Shared user state lives here so both student types follow the same validation rules.
 package com.majordna.model;
 
 public abstract class User {
@@ -23,3 +24,4 @@ public abstract class User {
 
     public abstract String getUserType();
 }
+

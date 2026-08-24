@@ -1,3 +1,4 @@
+// Student-specific identity extends the common User contract.
 package com.majordna.model;
 
 public final class CityUStudent extends User {
@@ -7,3 +8,4 @@ public final class CityUStudent extends User {
     public void setStudentId(String studentId) { this.studentId = studentId == null ? "" : studentId.trim(); }
     @Override public String getUserType() { return "CITYU_STUDENT"; }
 }
+

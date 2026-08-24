@@ -1,3 +1,4 @@
+// The interface lets the report service use either a hosted model or the Java fallback.
 package com.majordna.service;
 
 import com.majordna.model.Domain.*;
@@ -8,3 +9,4 @@ public interface AIAnalysisService {
     ChatResponse advise(Report report, String message);
     boolean configured();
 }
+
