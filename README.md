@@ -1,5 +1,10 @@
 # MajorDNA
 
+<img width="1799" height="1047" alt="لقطة شاشة 2026-09-13 211833" src="https://github.com/user-attachments/assets/8296320e-3156-4f67-870b-96b7b4d6e7ac" />
+<img width="1799" height="1047" alt="لقطة شاشة 2026-09-13 212010" src="https://github.com/user-attachments/assets/7f4ceec6-b34c-410f-af63-01ef51e5d720" />
+<img width="1797" height="1036" alt="لقطة شاشة 2026-09-13 211925" src="https://github.com/user-attachments/assets/2a3d8347-6cc5-475e-87f1-cd2b6f1032e3" />
+
+
 MajorDNA is a GUI-based major and career discovery platform for students at City University Malaysia. It combines a React frontend, a Java Spring Boot REST backend, a hosted LLM advisor, JSON file persistence, and a JavaFX desktop report dashboard.
 
 The system is designed as an OOP course project and simulates a real student guidance workflow rather than a simple CRUD application:
